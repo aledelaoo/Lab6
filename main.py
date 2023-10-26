@@ -26,19 +26,5 @@ def encode_password(password):
     return encoded_password
 
 
-def decode_password(encoded_password):
-    if not encoded_password.isdigit() or len(encoded_password) != 8:
-        return "Invalid encoded password format"
-
-    original_password = ""
-    for digit in encoded_password:
-        original_digit = str((int(digit) - 3) % 10)
-        original_password += original_digit
-
-    return original_password
-
-
-
-
 if __name__ == '__main__':
     main()
